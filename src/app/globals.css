@@ -2,20 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-slate-50 text-slate-900;
+}
+
+/* Mute the OSM base map so trucks and sites stand out */
+.map-tiles {
+  filter: grayscale(0.85) brightness(1.04) contrast(0.9);
+}
+
+/* Truck marker drawn by Leaflet divIcon (see FleetMap.tsx) */
+.truck-marker {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  background: var(--c);
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgb(15 23 42 / 0.35);
+  transition: transform 150ms ease;
+}
+.truck-marker.is-selected {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgb(14 165 233 / 0.45), 0 1px 4px rgb(15 23 42 / 0.35);
+}
+.leaflet-marker-icon {
+  /* smooth movement between 1-second position updates */
+  transition: transform 1s linear;
+}
+.leaflet-zoom-anim .leaflet-marker-icon {
+  transition: none;
 }
