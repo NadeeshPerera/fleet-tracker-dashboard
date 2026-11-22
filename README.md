@@ -10,9 +10,9 @@ Trucks move live on a map, jobs update over a push connection, dispatchers alloc
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white)
 
-**▶ Live demo:** _coming soon_
+### **▶ [Live demo: nadeesh-fleet-tracker.vercel.app](https://nadeesh-fleet-tracker.vercel.app)**
 
-<!-- Add a screenshot or GIF: docs/screenshot.png -->
+[![Fleet Tracker dashboard showing live trucks on a map of Singapore, fleet KPIs, the truck list and the jobs table](docs/screenshot.png)](https://nadeesh-fleet-tracker.vercel.app)
 
 > This is a portfolio project based on patterns I use in production on enterprise logistics portals (React, TypeScript, Redux, SignalR, Firebase). All companies, drivers and data here are fictional, and the backend is simulated in the browser so the demo runs with zero setup.
 
