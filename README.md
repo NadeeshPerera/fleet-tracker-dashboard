@@ -108,6 +108,8 @@ CI (GitHub Actions) runs lint, type-check, tests and build on every push and pul
 
 ## Roadmap
 
+The full backlog is in **[ROADMAP.md](ROADMAP.md)**. Highlights:
+
 - [ ] Replace the mock hub with a real ASP.NET Core SignalR backend
 - [ ] Road-following routes (OSRM) instead of straight lines
 - [ ] Dark mode
