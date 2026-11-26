@@ -6,10 +6,10 @@ import { selectKpis } from "@/store/selectors";
 
 function Card({ label, value, hint }: { label: string; value: string; hint?: string }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-      <dt className="text-xs font-medium uppercase tracking-wide text-slate-500">{label}</dt>
-      <dd className="mt-1 text-2xl font-semibold tabular-nums text-slate-900">{value}</dd>
-      {hint && <dd className="mt-0.5 text-xs text-slate-500">{hint}</dd>}
+    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <dt className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">{label}</dt>
+      <dd className="mt-1 text-2xl font-semibold tabular-nums text-slate-900 dark:text-slate-50">{value}</dd>
+      {hint && <dd className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{hint}</dd>}
     </div>
   );
 }

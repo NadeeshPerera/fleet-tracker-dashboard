@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { memo, useEffect, useRef } from "react";
 import { CircleMarker, MapContainer, Marker, Polyline, TileLayer, Tooltip, useMap } from "react-leaflet";
+import { useTheme } from "@/hooks/useTheme";
 import { TRUCK_STATUS } from "@/lib/status";
 import type { LatLng, Truck } from "@/lib/types";
 import { DEPOTS, SITES } from "@/server/seed";
@@ -12,6 +13,9 @@ import { selectAllTrucks, selectSelectedTruck } from "@/store/selectors";
 import { truckSelected } from "@/store/slices";
 
 const SG_CENTER: [number, number] = [1.3521, 103.8198];
+
+// Depots are dark dots on the light map and light dots on the dark map, so they stay visible.
+const DEPOT_COLOR = { light: "#0f172a", dark: "#e2e8f0" } as const;
 const toTuple = (p: LatLng): [number, number] => [p.lat, p.lng];
 
 // Icons are cached by (status, heading bucket, selected) so we don't build a new
@@ -99,6 +103,8 @@ export default function FleetMap() {
   const trucks = useAppSelector(selectAllTrucks);
   const selected = useAppSelector(selectSelectedTruck);
   const onSelect = (id: string) => dispatch(truckSelected(id));
+  const [theme] = useTheme();
+  const depotColor = DEPOT_COLOR[theme];
 
   return (
     <MapContainer center={SG_CENTER} zoom={11} minZoom={10} scrollWheelZoom className="h-full w-full">
@@ -113,7 +119,7 @@ export default function FleetMap() {
           key={d.name}
           center={toTuple(d.position)}
           radius={7}
-          pathOptions={{ color: "#0f172a", fillColor: "#0f172a", fillOpacity: 0.85, weight: 2 }}
+          pathOptions={{ color: depotColor, fillColor: depotColor, fillOpacity: 0.85, weight: 2 }}
         >
           <Tooltip>Depot · {d.name}</Tooltip>
         </CircleMarker>

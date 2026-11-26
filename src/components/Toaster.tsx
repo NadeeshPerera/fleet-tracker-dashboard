@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from "@/store";
 import { toastDismissed, type Toast } from "@/store/slices";
 
 const TONE: Record<Toast["tone"], string> = {
-  success: "border-emerald-300 bg-emerald-50 text-emerald-900",
-  error: "border-red-300 bg-red-50 text-red-900",
-  info: "border-slate-300 bg-white text-slate-900",
+  success: "border-emerald-300 bg-emerald-50 text-emerald-900 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-100",
+  error: "border-red-300 bg-red-50 text-red-900 dark:border-red-800 dark:bg-red-950 dark:text-red-100",
+  info: "border-slate-300 bg-white text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100",
 };
 
 function ToastItem({ toast }: { toast: Toast }) {
