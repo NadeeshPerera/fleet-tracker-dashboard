@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  // Dark mode is a class on <html>, set from the saved choice or the OS (see src/lib/theme.ts).
+  darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
