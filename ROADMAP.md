@@ -10,7 +10,6 @@ Rules for every item:
 
 ## Backlog
 
-- [ ] **1. Dark mode.** System preference plus a header toggle, saved in `localStorage`. Use a dark map tile style, and keep status colours at WCAG AA contrast.
 - [ ] **2. Truck detail drawer.** Clicking a truck opens a side panel with driver, capacity, current job, the last 10 position updates (a sparkline of speed), and a "Follow on map" toggle.
 - [ ] **3. Jobs table sorting.** Sortable columns (job, customer, status, ETA, total) with `aria-sort`, and the sort state kept in the URL.
 - [ ] **4. Create job form.** Dispatchers can create a job (customer, material, tonnes, pickup, dropoff) with validation. The engine accepts it through a new hub method `createJob`.
@@ -24,4 +23,4 @@ Rules for every item:
 
 ## Done
 
-_Nothing yet: the first scheduled PR will land here._
+- [x] **1. Dark mode.** Follows the OS until the header "Dark mode" switch saves a choice in `localStorage`; no flash on load; dark-filtered map tiles and Leaflet controls; status badges tested for WCAG AA contrast in both themes. ([#1](https://github.com/NadeeshPerera/fleet-tracker-dashboard/pull/1))

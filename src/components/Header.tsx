@@ -4,6 +4,7 @@ import { formatTime } from "@/lib/format";
 import { useFleetHub } from "@/realtime/RealtimeProvider";
 import { useAppDispatch, useAppSelector } from "@/store";
 import { autoDispatchToggled, toastAdded } from "@/store/slices";
+import { ThemeToggle } from "./ThemeToggle";
 
 function ConnectionBadge() {
   const { status, attempt, retryInMs, lastMessageAt } = useAppSelector((s) => s.connection);
@@ -53,7 +54,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-slate-900 text-white">
+    <header className="bg-slate-900 text-white dark:border-b dark:border-slate-800 dark:bg-slate-950">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-4 py-4">
         <div>
           <h1 className="text-lg font-semibold tracking-tight">Fleet Tracker · Singapore</h1>
@@ -89,6 +90,8 @@ export function Header() {
           >
             Simulate network drop
           </button>
+
+          <ThemeToggle />
         </div>
       </div>
     </header>

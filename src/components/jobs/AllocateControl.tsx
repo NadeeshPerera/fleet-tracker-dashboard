@@ -30,7 +30,7 @@ export function AllocateControl({ job }: { job: Job }) {
   };
 
   if (options.length === 0) {
-    return <span className="text-xs text-slate-400">No idle trucks</span>;
+    return <span className="text-xs text-slate-500 dark:text-slate-400">No idle trucks</span>;
   }
 
   return (
@@ -39,7 +39,7 @@ export function AllocateControl({ job }: { job: Job }) {
       disabled={busy}
       value=""
       onChange={(e) => allocate(e.target.value)}
-      className="w-40 rounded-md border border-slate-300 bg-white px-2 py-1 text-xs focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 disabled:opacity-50"
+      className="w-40 rounded-md border border-slate-300 bg-white px-2 py-1 text-xs dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 disabled:opacity-50"
     >
       <option value="">{busy ? "Allocating…" : "Allocate truck…"}</option>
       {options.map(({ truck, km }) => (

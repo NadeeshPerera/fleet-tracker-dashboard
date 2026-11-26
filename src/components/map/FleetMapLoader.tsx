@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 const FleetMap = dynamic(() => import("./FleetMap"), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full w-full animate-pulse items-center justify-center bg-slate-100 text-sm text-slate-500">
+    <div className="flex h-full w-full animate-pulse items-center justify-center bg-slate-100 text-sm text-slate-500 dark:bg-slate-800 dark:text-slate-400">
       Loading map…
     </div>
   ),
@@ -15,7 +15,7 @@ const FleetMap = dynamic(() => import("./FleetMap"), {
 
 export function FleetMapLoader() {
   return (
-    <section aria-label="Live fleet map" className="h-[420px] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm lg:h-[520px]">
+    <section aria-label="Live fleet map" className="h-[420px] overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:h-[520px]">
       <FleetMap />
     </section>
   );

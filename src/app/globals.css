@@ -3,12 +3,44 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-50 text-slate-900;
+  @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
 }
 
 /* Mute the OSM base map so trucks and sites stand out */
 .map-tiles {
   filter: grayscale(0.85) brightness(1.04) contrast(0.9);
+}
+/* Dark map: invert the muted tiles (hue-rotate keeps water and parks their usual hue). */
+.dark .map-tiles {
+  filter: grayscale(0.85) invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.85);
+}
+.dark .leaflet-container {
+  background: #0f172a; /* slate-900, shown before tiles load */
+}
+.dark .leaflet-bar a,
+.dark .leaflet-control-attribution,
+.dark .leaflet-tooltip {
+  background: #1e293b; /* slate-800 */
+  color: #e2e8f0; /* slate-200 */
+  border-color: #334155; /* slate-700 */
+}
+.dark .leaflet-bar a:hover {
+  background: #334155;
+}
+.dark .leaflet-control-attribution a {
+  color: #7dd3fc; /* sky-300 */
+}
+.dark .leaflet-tooltip-top::before {
+  border-top-color: #1e293b;
+}
+.dark .leaflet-tooltip-bottom::before {
+  border-bottom-color: #1e293b;
+}
+.dark .leaflet-tooltip-left::before {
+  border-left-color: #1e293b;
+}
+.dark .leaflet-tooltip-right::before {
+  border-right-color: #1e293b;
 }
 
 /* Truck marker drawn by Leaflet divIcon (see FleetMap.tsx) */
