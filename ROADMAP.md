@@ -23,4 +23,4 @@ Rules for every item:
 
 ## Done
 
-- [x] **1. Dark mode.** Follows the OS until the header "Dark mode" switch saves a choice in `localStorage`; no flash on load; dark-filtered map tiles and Leaflet controls; status badges tested for WCAG AA contrast in both themes.
+- [x] **1. Dark mode.** Follows the OS until the header "Dark mode" switch saves a choice in `localStorage`; no flash on load; dark-filtered map tiles and Leaflet controls; status badges tested for WCAG AA contrast in both themes. ([#1](https://github.com/NadeeshPerera/fleet-tracker-dashboard/pull/1))
