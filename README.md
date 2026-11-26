@@ -28,6 +28,7 @@ Trucks move live on a map, jobs update over a push connection, dispatchers alloc
 | 🧭 **Dispatch** | Pending jobs can be allocated to idle trucks, **sorted by distance** to the pickup. The server validates each allocation and rejects races (e.g. "truck is no longer idle"). An optional **auto-dispatch** assigns the nearest idle truck. |
 | 📊 **KPIs** | Fleet utilisation, active and pending jobs, tonnes delivered and revenue, all from memoised selectors. |
 | 🧾 **Invoice PDFs** | Tax invoices with **9% Singapore GST**, built client-side with `pdf-lib`. The library is lazy-loaded only when you click. |
+| 🌙 **Dark mode** | Follows the OS setting (and its live changes) until you flip the header switch, which is saved in `localStorage`. An inline script applies it before first paint, so there is no light flash. Map tiles, Leaflet controls and depot markers adapt, and status badge colours are unit-tested for WCAG AA contrast in both themes. |
 | ♿ **Accessible** | Semantic tables, labelled controls, `aria-pressed` toggles, `role="switch"`, live regions for connection status and toasts, and keyboard-reachable map markers. |
 
 ## Architecture
